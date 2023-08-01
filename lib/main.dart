@@ -3,8 +3,18 @@ import 'package:flutter/material.dart';
 
 void main() {
   runApp(
-    const MaterialApp(
-      home: LayarPertama(),
+    MaterialApp(
+      home: Scaffold(
+        body: Container(
+          decoration: const BoxDecoration(
+            gradient: LinearGradient(
+                colors: [Colors.purple, Colors.deepPurple],
+                begin: Alignment.topLeft,
+                end: Alignment.bottomRight),
+          ),
+          child: const LayarPertama(),
+        ),
+      ),
     ),
   );
 }
