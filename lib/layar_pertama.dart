@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 
 class LayarPertama extends StatelessWidget {
-  const LayarPertama({super.key});
+  const LayarPertama(this.gantiLayar, {super.key});
+
+  final void Function() gantiLayar;
+
   @override
   Widget build(context) {
     return Center(
@@ -11,6 +14,7 @@ class LayarPertama extends StatelessWidget {
           Image.asset(
             "assets/images/quiz-logo.png",
             width: 300,
+            color: const Color.fromARGB(180, 255, 255, 255),
           ),
           const SizedBox(height: 50),
           const Text(
@@ -20,7 +24,7 @@ class LayarPertama extends StatelessWidget {
           ),
           const SizedBox(height: 30),
           OutlinedButton.icon(
-            onPressed: () {},
+            onPressed: gantiLayar,
             style: OutlinedButton.styleFrom(
               foregroundColor: Colors.white,
             ),
