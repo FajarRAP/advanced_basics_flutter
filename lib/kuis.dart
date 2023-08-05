@@ -11,17 +11,11 @@ class Kuis extends StatefulWidget {
 }
 
 class _KuisState extends State<Kuis> {
-  Widget? layarAktif;
-
-  @override
-  void initState() {
-    layarAktif = LayarPertama(gantiLayar);
-    super.initState();
-  }
+  String layarAktif = "layar_awal";
 
   void gantiLayar() {
     setState(() {
-      layarAktif = const LayarPertanyaan();
+      layarAktif = "layar_pertanyaan";
     });
   }
 
@@ -36,7 +30,9 @@ class _KuisState extends State<Kuis> {
                 begin: Alignment.topLeft,
                 end: Alignment.bottomRight),
           ),
-          child: layarAktif,
+          child: layarAktif != "layar_awal"
+              ? const LayarPertanyaan()
+              : LayarPertama(gantiLayar),
         ),
       ),
     );
