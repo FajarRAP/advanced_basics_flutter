@@ -25,22 +25,9 @@ class _LayarPertanyaanState extends State<LayarPertanyaan> {
             ),
           ),
           const SizedBox(height: 24),
-          TombolJawaban(
-            tombolnya: () {},
-            opsiJawaban: pertanyaan[0].opsiJawaban[0],
-          ),
-          TombolJawaban(
-            tombolnya: () {},
-            opsiJawaban: pertanyaan[0].opsiJawaban[1],
-          ),
-          TombolJawaban(
-            tombolnya: () {},
-            opsiJawaban: pertanyaan[0].opsiJawaban[2],
-          ),
-          TombolJawaban(
-            tombolnya: () {},
-            opsiJawaban: pertanyaan[0].opsiJawaban[3],
-          ),
+          ...pertanyaan[0].getOpsiJawabanAcak().map((opsi) {
+            return TombolJawaban(tombolnya: () {}, opsiJawaban: opsi);
+          }),
         ],
       ),
     );

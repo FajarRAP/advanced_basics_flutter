@@ -24,7 +24,7 @@ class TombolJawaban extends StatelessWidget {
           vertical: 12,
           horizontal: 44,
         ),
-        minimumSize: const Size(250, 40),
+        minimumSize: const Size(300, 40),
       ),
       child: Text(opsiJawaban),
     );
