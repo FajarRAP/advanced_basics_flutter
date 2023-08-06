@@ -1,7 +1,8 @@
 import 'package:advanced_basics/data/data_soal.dart';
 import 'package:advanced_basics/layar_pertanyaan.dart';
-import 'package:flutter/material.dart';
 import 'package:advanced_basics/layar_pertama.dart';
+import 'package:advanced_basics/layar_hasil_jawaban.dart';
+import 'package:flutter/material.dart';
 
 class Kuis extends StatefulWidget {
   const Kuis({super.key});
@@ -20,8 +21,7 @@ class _KuisState extends State<Kuis> {
 
     if (daftarJawaban.length == pertanyaan.length) {
       setState(() {
-        daftarJawaban.clear();
-        layarAktif = "layar_awal";
+        layarAktif = "layar_hasil_jawaban";
       });
     }
   }
@@ -34,6 +34,19 @@ class _KuisState extends State<Kuis> {
 
   @override
   Widget build(context) {
+    Widget tujuan = LayarPertama(gantiLayar: gantiLayar);
+
+    if (layarAktif == "layar_pertanyaan") {
+      tujuan = LayarPertanyaan(
+        onPilih: tambahJawabanKeList,
+      );
+    }
+
+    if (layarAktif == "layar_hasil_jawaban") {
+      tujuan = LayarHasilJawaban(
+        jawabannya: daftarJawaban,
+      );
+    }
     return MaterialApp(
       home: Scaffold(
         body: Container(
@@ -43,9 +56,7 @@ class _KuisState extends State<Kuis> {
                 begin: Alignment.topLeft,
                 end: Alignment.bottomRight),
           ),
-          child: layarAktif != "layar_awal"
-              ? LayarPertanyaan(onPilih: tambahJawabanKeList)
-              : LayarPertama(gantiLayar: gantiLayar),
+          child: tujuan,
         ),
       ),
     );
