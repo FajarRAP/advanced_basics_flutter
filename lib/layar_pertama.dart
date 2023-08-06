@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class LayarPertama extends StatelessWidget {
-  const LayarPertama(this.gantiLayar, {super.key});
+  const LayarPertama({super.key, required this.gantiLayar});
 
   final void Function() gantiLayar;
 
@@ -17,9 +18,12 @@ class LayarPertama extends StatelessWidget {
             color: const Color.fromARGB(180, 255, 255, 255),
           ),
           const SizedBox(height: 50),
-          const Text(
+          Text(
             "Belajar Flutter dengan menyenangkan",
-            style: TextStyle(color: Colors.white, fontSize: 28),
+            style: GoogleFonts.lato(
+              color: Colors.white,
+              fontSize: 28,
+            ),
             textAlign: TextAlign.center,
           ),
           const SizedBox(height: 30),
