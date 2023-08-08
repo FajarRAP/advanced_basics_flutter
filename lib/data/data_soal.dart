@@ -19,4 +19,25 @@ const List<PertanyaanKuis> pertanyaan = [
     "Pakuwon Mall",
     "Izanagi"
   ]),
+  PertanyaanKuis(
+    "Meja idaman Ainx apa?",
+    [
+      "Deli",
+      "IKEA",
+      "Krissbow",
+      "Ace",
+    ],
+  ),
+  PertanyaanKuis("Cooler hp Ainx harganya berapa?", [
+    "Rp. 229.000",
+    "Rp. 100.900",
+    "Rp. 375.000",
+    "Rp. 94.000",
+  ]),
+  PertanyaanKuis("Asal Ainx dari mana?", [
+    "Ciamis",
+    "Bantul",
+    "Tasik",
+    "Jakarta",
+  ])
 ];

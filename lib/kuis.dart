@@ -29,6 +29,7 @@ class _KuisState extends State<Kuis> {
   void gantiLayar() {
     setState(() {
       layarAktif = "layar_pertanyaan";
+      daftarJawaban.clear();
     });
   }
 
@@ -45,6 +46,7 @@ class _KuisState extends State<Kuis> {
     if (layarAktif == "layar_hasil_jawaban") {
       tujuan = LayarHasilJawaban(
         jawabannya: daftarJawaban,
+        gantiLayar: gantiLayar,
       );
     }
     return MaterialApp(

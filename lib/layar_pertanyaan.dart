@@ -4,8 +4,10 @@ import 'package:advanced_basics/data/data_soal.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class LayarPertanyaan extends StatefulWidget {
-  const LayarPertanyaan({super.key, required this.onPilih});
+  const LayarPertanyaan(
+      {super.key, required this.onPilih, this.isBalik = false});
   final void Function(String pilih) onPilih;
+  final bool isBalik;
   @override
   State<LayarPertanyaan> createState() {
     return _LayarPertanyaanState();
